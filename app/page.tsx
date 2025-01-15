@@ -33,7 +33,7 @@ export default function Home() {
             <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto">
               {t.hero.subtitle}
             </p>
-            <div className="mt-10 flex justify-center gap-4">
+            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
               <Button asChild>
                 <a href="#contact">
                   <Send className="mr-2 h-4 w-4" />
@@ -135,7 +135,7 @@ export default function Home() {
               <a href="mailto:dany.xiong.dev@outlook.fr" className="text-muted-foreground hover:text-primary" target='_blank'>
                 <Mail className="h-6 w-6" />
               </a>
-              <a href="https://www.linkedin.com/in/dany-xiong-a66a2529a/" className="text-muted-foreground hover:text-primary" target='_blank'>
+              <a href="https://linkedin.com/in/your-profile" className="text-muted-foreground hover:text-primary" target='_blank'>
                 <Linkedin className="h-6 w-6" />
               </a>
               <a href="https://github.com/Ekkylibre" className="text-muted-foreground hover:text-primary" target='_blank'>
