@@ -132,13 +132,13 @@ export default function Home() {
 
           <div className="mt-12 text-lg text-muted-foreground">
             <div className="flex justify-center gap-8 mt-4">
-              <a href="mailto:contact@example.com" className="text-muted-foreground hover:text-primary">
+              <a href="mailto:dany.xiong.dev@outlook.fr" className="text-muted-foreground hover:text-primary" target='_blank'>
                 <Mail className="h-6 w-6" />
               </a>
-              <a href="https://linkedin.com/in/your-profile" className="text-muted-foreground hover:text-primary">
+              <a href="https://www.linkedin.com/in/dany-xiong-a66a2529a/" className="text-muted-foreground hover:text-primary" target='_blank'>
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="https://github.com/your-username" className="text-muted-foreground hover:text-primary">
+              <a href="https://github.com/Ekkylibre" className="text-muted-foreground hover:text-primary" target='_blank'>
                 <Github className="h-6 w-6" />
               </a>
             </div>
