@@ -24,18 +24,18 @@ export const translations = {
       demoButton: 'Voir le projet',
       projects: [
         {
-          title: 'E-commerce Platform',
-          description: 'Une plateforme e-commerce complète avec panier, paiement et gestion des commandes',
+          title: 'Crazee-Burger',
+          description: 'Une application de commande en ligne permettant de personnaliser les produits, gérer les quantités et ajuster les prix en temps réel.',
           demoUrl: '#',
         },
         {
-          title: 'Dashboard Analytics',
-          description: 'Un tableau de bord moderne pour visualiser et analyser les données',
+          title: 'Site Vitrine',
+          description: 'Un site vitrine pour un réalisateur présente son portfolio, ses services et facilite la prise de contact via un formulaire dédié.',
           demoUrl: '#',
         },
         {
-          title: 'Task Management',
-          description: 'Application de gestion de tâches avec fonctionnalités collaboratives',
+          title: 'Minecraft Modboard',
+          description: 'API et interface utilisateur Web pour gérer les serveurs Minecraft modifiés permettant une gestion facile des configurations et des mods.',
           demoUrl: '#',
         },
       ],
@@ -80,18 +80,18 @@ export const translations = {
       demoButton: 'View Project',
       projects: [
         {
-          title: 'E-commerce Platform',
-          description: 'A complete e-commerce platform with cart, payment, and order management',
+          title: 'Crazee-Burger',
+          description: 'An online ordering application that allows you to customize products, manage quantities and adjust prices in real time.',
           demoUrl: '#',
         },
         {
-          title: 'Dashboard Analytics',
-          description: 'A modern dashboard for data visualization and analysis',
+          title: 'Showcase Site',
+          description: 'A showcase site for a director presents his portfolio, his services and his career, while facilitating contact through a dedicated form.',
           demoUrl: '#',
         },
         {
-          title: 'Task Management',
-          description: 'Task management application with collaborative features',
+          title: 'Minecraft Modboard',
+          description: 'API and web UI to manage modded Minecraft servers allowing easy management of configurations and mods.',
           demoUrl: '#',
         },
       ],
