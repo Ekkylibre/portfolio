@@ -26,17 +26,20 @@ export const translations = {
         {
           title: 'Crazee-Burger',
           description: 'Une application de commande en ligne permettant de personnaliser les produits, gérer les quantités et ajuster les prix en temps réel.',
-          demoUrl: '#',
+          demoUrl: 'https://crazee-burger-kgp1jvhvw-danys-projects-420b837d.vercel.app/',
+          imageUrl: '/crazee-burger.jpg',
         },
         {
           title: 'Site Vitrine',
           description: 'Un site vitrine pour un réalisateur présente son portfolio, ses services et facilite la prise de contact via un formulaire dédié.',
-          demoUrl: '#',
+          demoUrl: 'https://www.makeyvision.com/',
+          imageUrl: '/makeyvision.jpg',
         },
         {
           title: 'Minecraft Modboard',
           description: 'API et interface utilisateur Web pour gérer les serveurs Minecraft modifiés permettant une gestion facile des configurations et des mods.',
-          demoUrl: '#',
+          demoUrl: 'https://mc-mod-board-qbxi3t2qs-danys-projects-420b837d.vercel.app/',
+          imageUrl: '/minecraft.jpg',
         },
       ],
     },
@@ -82,17 +85,20 @@ export const translations = {
         {
           title: 'Crazee-Burger',
           description: 'An online ordering application that allows you to customize products, manage quantities and adjust prices in real time.',
-          demoUrl: '#',
+          demoUrl: 'https://crazee-burger-kgp1jvhvw-danys-projects-420b837d.vercel.app/',
+          imageUrl: '/crazee-burger.jpg',
         },
         {
           title: 'Showcase Site',
           description: 'A showcase site for a director presents his portfolio, his services and his career, while facilitating contact through a dedicated form.',
-          demoUrl: '#',
+          demoUrl: 'https://www.makeyvision.com/',
+          imageUrl: '/makeyvision.jpg'
         },
         {
           title: 'Minecraft Modboard',
           description: 'API and web UI to manage modded Minecraft servers allowing easy management of configurations and mods.',
-          demoUrl: '#',
+          demoUrl: 'https://mc-mod-board-qbxi3t2qs-danys-projects-420b837d.vercel.app/',
+          imageUrl: '/minecraft.jpg',
         },
       ],
     },
