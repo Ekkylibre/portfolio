@@ -26,7 +26,7 @@ export const translations = {
         {
           title: 'Crazee-Burger',
           description: 'Une application de commande en ligne permettant de personnaliser les produits, gérer les quantités et ajuster les prix en temps réel.',
-          demoUrl: 'https://crazee-burger-kgp1jvhvw-danys-projects-420b837d.vercel.app/',
+          demoUrl: 'https://crazee-burger-mauve.vercel.app/',
           imageUrl: '/crazee-burger.jpg',
         },
         {
@@ -38,7 +38,7 @@ export const translations = {
         {
           title: 'Site prise de rendez-vous',
           description: 'Plateforme simple et intuitive pour gérer les réservations en ligne, avec sélection de date et d’heure.',
-          demoUrl: 'https://ken-coaching-prv65guxg-danys-projects-420b837d.vercel.app/',
+          demoUrl: 'https://ken-coaching.vercel.app/',
           imageUrl: '/ken-coaching.jpg',
         },
       ],
@@ -85,7 +85,7 @@ export const translations = {
         {
           title: 'Crazee-Burger',
           description: 'An online ordering application that allows you to customize products, manage quantities and adjust prices in real time.',
-          demoUrl: 'https://crazee-burger-kgp1jvhvw-danys-projects-420b837d.vercel.app/',
+          demoUrl: 'https://crazee-burger-mauve.vercel.app/',
           imageUrl: '/crazee-burger.jpg',
         },
         {
@@ -97,7 +97,7 @@ export const translations = {
         {
           title: 'Appointment booking site',
           description: 'Simple and intuitive platform to manage online bookings, with date and time selection.',
-          demoUrl: 'https://ken-coaching-prv65guxg-danys-projects-420b837d.vercel.app/',
+          demoUrl: 'https://ken-coaching.vercel.app/',
           imageUrl: '/ken-coaching.jpg',
         },
       ],
