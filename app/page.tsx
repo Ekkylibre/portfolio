@@ -71,7 +71,7 @@ export default function Home() {
               </p>
               <h3 className="text-2xl font-semibold mb-4">{t.about.skills}</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Next.js', 'TypeScript', 'React.js', 'Styled-Components', 'Redux', 'Axios', 'Git', 'GitHub'].map((skill) => (
+                {['Next.js', 'TypeScript', 'React.js', 'Tailwind CSS', 'Git/GitHub', 'Redux', 'PostgreSQL', 'API REST'].map((skill) => (
                   <div
                     key={skill}
                     className="p-4 text-center bg-muted/50 rounded-lg hover:bg-muted transition-colors shadow-md"
