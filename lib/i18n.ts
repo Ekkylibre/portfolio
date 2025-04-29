@@ -16,7 +16,7 @@ export const translations = {
     },
     about: {
       title: 'À propos de moi',
-      description: 'Développeur Front End avec une spécialisation en React.js, j’adore créer des interfaces modernes et fluides. Curieux et impliqué, je prends plaisir à résoudre des défis techniques et à trouver des solutions simples et efficaces. Je cherche toujours à apprendre de nouvelles choses tout en contribuant activement au succès des projets de l’équipe.',
+      description: 'J’aime quand les idées prennent forme, quand on passe du concept au concret. Ce qui me motive, c’est de rejoindre une équipe qui ose, qui itère vite, qui construit pour résoudre des vrais besoins. Je démarre un Master en alternance dès septembre 2025 avec l’envie d’apprendre au contact du terrain, de prendre part à un projet ambitieux et de contribuer à un produit qui a du sens. Builder, tester, pivoter s’il le faut — mais toujours avancer.',
       skills: 'Compétences',
     },
     portfolio: {
@@ -24,22 +24,22 @@ export const translations = {
       demoButton: 'Voir le projet',
       projects: [
         {
-          title: 'Crazee-Burger',
+          title: 'Crazee Burger - Application de commande en ligne',
           description: 'Une application de commande en ligne permettant de personnaliser les produits, gérer les quantités et ajuster les prix en temps réel.',
           demoUrl: 'https://crazee-burger-mauve.vercel.app/',
           imageUrl: '/crazee-burger.jpg',
         },
         {
-          title: 'Site Vitrine',
+          title: 'MK Vision - Site vitrine pour un réalisateur',
           description: 'Un site vitrine pour un réalisateur présente son portfolio, ses services et facilite la prise de contact via un formulaire dédié.',
           demoUrl: 'https://www.makeyvision.com/',
           imageUrl: '/makeyvision.jpg',
         },
         {
-          title: 'Site prise de rendez-vous',
-          description: 'Plateforme simple et intuitive pour gérer les réservations en ligne, avec sélection de date et d’heure.',
-          demoUrl: 'https://ken-coaching.vercel.app/',
-          imageUrl: '/ken-coaching.jpg',
+          title: 'PoketSecret - Application Web SaaS',
+          description: 'Une application web permettant de suivre la disponibilité des produits Pokémon en magasin et d’être alerté sur les réapprovisionnements et promotions.',
+          demoUrl: 'https://poket-secret.vercel.app/',
+          imageUrl: '/poketsecret.jpg',
         },
       ],
     },
@@ -75,7 +75,7 @@ export const translations = {
     },
     about: {
       title: 'About Me',
-      description: 'Front End developer specializing in React.js, I love building modern and seamless interfaces. Curious and dedicated, I enjoy tackling technical challenges and finding simple, effective solutions. I’m always eager to learn new things while actively contributing to the success of the team\'s projects.',
+      description: 'I thrive when ideas take shape, when we go from concept to reality. What drives me is joining a team that dares, iterates quickly, and builds to solve real problems. Starting a Master’s program in a work-study format in September 2025, I’m eager to learn hands-on, contribute to an ambitious project, and help create a product that truly matters. Build, test, pivot if needed — but always move forward.',
       skills: 'Skills',
     },
     portfolio: {
@@ -95,10 +95,10 @@ export const translations = {
           imageUrl: '/makeyvision.jpg'
         },
         {
-          title: 'Appointment booking site',
-          description: 'Simple and intuitive platform to manage online bookings, with date and time selection.',
-          demoUrl: 'https://ken-coaching.vercel.app/',
-          imageUrl: '/ken-coaching.jpg',
+          title: 'PoketSecret - Web SaaS Application',
+          description: 'A web application that allows users to track the availability of Pokémon products in stores and receive alerts for restocks and promotions.',
+          demoUrl: 'https://poket-secret.vercel.app/',
+          imageUrl: '/poketsecret.jpg',
         },
       ],
     },
