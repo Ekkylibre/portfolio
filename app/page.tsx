@@ -106,11 +106,21 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <Button asChild variant="outline" className="w-full">
-                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                      {t.portfolio.demoButton}
-                    </a>
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button asChild variant="outline" className="flex-1">
+                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                        {t.portfolio.demoButton}
+                      </a>
+                    </Button>
+                    {project.githubUrl && (
+                      <Button asChild variant="outline" className="flex-1">
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-4 w-4" />
+                          {t.portfolio.githubButton}
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
