@@ -16,7 +16,7 @@ export const translations = {
     },
     about: {
       title: 'À propos de moi',
-      description: 'J\'aime quand les idées prennent forme, quand on passe du concept au concret. Ce qui me motive, c\'est de rejoindre une équipe qui ose, qui itère vite, qui construit pour résoudre des vrais besoins. Je démarre un Master en alternance dès septembre 2025 avec l\'envie d\'apprendre au contact du terrain, de prendre part à un projet ambitieux et de contribuer à un produit qui a du sens. Builder, tester, pivoter s\'il le faut — mais toujours avancer.',
+      description: 'J\'aime quand les idées prennent forme, quand on passe du concept au concret. Ce qui me motive, c\'est de rejoindre une équipe qui ose, qui itère vite, et qui construit pour répondre à de vrais besoins. J\'ai envie d\'apprendre au contact du terrain, de prendre part à un projet ambitieux et de contribuer à un produit qui a du sens. Builder, tester, pivoter s\'il le faut — mais toujours avancer.',
       skills: 'Compétences',
     },
     portfolio: {
@@ -42,6 +42,7 @@ export const translations = {
           title: 'PoketSecret - Application Web SaaS',
           description: 'Une application web permettant de suivre la disponibilité des produits Pokémon en magasin et d\'être alerté sur les réapprovisionnements et promotions.',
           demoUrl: 'https://poket-secret.vercel.app/',
+          githubUrl: '',
           imageUrl: '/poketsecret.jpg',
         },
       ],
@@ -78,7 +79,7 @@ export const translations = {
     },
     about: {
       title: 'About Me',
-      description: 'I thrive when ideas take shape, when we go from concept to reality. What drives me is joining a team that dares, iterates quickly, and builds to solve real problems. Starting a Master\'s program in a work-study format in September 2025, I\'m eager to learn hands-on, contribute to an ambitious project, and help create a product that truly matters. Build, test, pivot if needed — but always move forward.',
+      description: 'I thrive when ideas take shape, when we go from concept to reality. What drives me is joining a team that dares, iterates quickly, and builds to solve real needs. I want to learn hands-on, contribute to an ambitious project, and help create a product that truly matters. Build, test, pivot if needed — but always move forward.',
       skills: 'Skills',
     },
     portfolio: {
@@ -104,6 +105,7 @@ export const translations = {
           title: 'PoketSecret - Web SaaS Application',
           description: 'A web application that allows users to track the availability of Pokémon products in stores and receive alerts for restocks and promotions.',
           demoUrl: 'https://poket-secret.vercel.app/',
+          githubUrl: '',
           imageUrl: '/poketsecret.jpg',
         },
       ],

@@ -4,10 +4,19 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Navbar } from '@/components/navbar';
-import { Download, Send, Mail, Linkedin, Github } from 'lucide-react';
+import { Download, Send, Mail, Linkedin, Github, Code2, FileCode, Layers, Database, GitBranch, GitPullRequest, Server } from 'lucide-react';
 import Image from 'next/image';
 import { Language, translations } from '@/lib/i18n';
 import { ContactForm } from '@/components/contact-form';
+import { skills } from '@/lib/skills';
+
+type Project = {
+  readonly title: string;
+  readonly description: string;
+  readonly demoUrl: string;
+  readonly githubUrl?: string;
+  readonly imageUrl?: string;
+};
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>('fr');
@@ -71,12 +80,14 @@ export default function Home() {
               </p>
               <h3 className="text-2xl font-semibold mb-4">{t.about.skills}</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {['Next.js', 'TypeScript', 'React.js', 'Tailwind CSS', 'Git/GitHub', 'Redux', 'PostgreSQL', 'API REST'].map((skill) => (
+                {skills.map((skill) => (
                   <div
-                    key={skill}
-                    className="p-4 text-center bg-muted/50 rounded-lg hover:bg-muted transition-colors shadow-md"
+                    key={skill.name}
+                    className="p-4 text-center bg-muted/50 rounded-lg hover:bg-muted transition-colors shadow-md flex flex-col items-center justify-center gap-2"
+                    title={skill.name}
                   >
-                    <h4 className="font-medium">{skill}</h4>
+                    {skill.icon}
+                    <h4 className="font-medium text-sm">{skill.name}</h4>
                   </div>
                 ))}
               </div>
