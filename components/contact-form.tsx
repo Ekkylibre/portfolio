@@ -29,7 +29,7 @@ interface ContactFormProps {
 // Constantes de validation
 const MAX_MESSAGE_LENGTH = 1000;
 const MIN_MESSAGE_LENGTH = 10;
-const MAX_SUBJECT_LENGTH = 100; // Modifié de 1000 à 100
+const MAX_SUBJECT_LENGTH = 100;
 const MIN_SUBJECT_LENGTH = 3;
 const SUBMIT_DELAY = 60000; // 60 secondes entre chaque soumission
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -38,6 +38,12 @@ const NAME_REGEX = /^[a-zA-Z\s-]{2,50}$/;
 export function ContactForm({ language, translations: t }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [lastSubmitTime, setLastSubmitTime] = useState<number>(0);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
   const { toast } = useToast();
 
   // Fonction de validation des entrées
@@ -72,8 +78,8 @@ export function ContactForm({ language, translations: t }: ContactFormProps) {
       return {
         isValid: false,
         error: language === 'fr'
-          ? `Le sujet doit contenir entre ${MIN_SUBJECT_LENGTH} et ${MAX_SUBJECT_LENGTH} caractères`
-          : `Subject must be between ${MIN_SUBJECT_LENGTH} and ${MAX_SUBJECT_LENGTH} characters`
+          ? 'Le sujet doit être plus détaillé'
+          : 'Subject must be more detailed'
       };
     }
 
@@ -82,8 +88,8 @@ export function ContactForm({ language, translations: t }: ContactFormProps) {
       return {
         isValid: false,
         error: language === 'fr'
-          ? `Le message doit contenir entre ${MIN_MESSAGE_LENGTH} et ${MAX_MESSAGE_LENGTH} caractères`
-          : `Message must be between ${MIN_MESSAGE_LENGTH} and ${MAX_MESSAGE_LENGTH} characters`
+          ? 'Le message doit être plus détaillé'
+          : 'Message must be more detailed'
       };
     }
 
@@ -99,6 +105,23 @@ export function ContactForm({ language, translations: t }: ContactFormProps) {
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#x27;')
       .replace(/\//g, '&#x2F;');
+  };
+
+  // Gestionnaire de changement pour les champs
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  // Fonction pour obtenir la classe de couleur basée sur la longueur
+  const getLengthColorClass = (currentLength: number, maxLength: number) => {
+    const percentage = (currentLength / maxLength) * 100;
+    if (percentage >= 90) return 'text-red-500';
+    if (percentage >= 75) return 'text-orange-500';
+    if (percentage >= 50) return 'text-yellow-500';
+    return 'text-muted-foreground';
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -119,14 +142,11 @@ export function ContactForm({ language, translations: t }: ContactFormProps) {
       return;
     }
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
     // Récupération et nettoyage des données
-    const name = sanitizeInput(formData.get('name') as string);
-    const email = sanitizeInput(formData.get('email') as string);
-    const subject = sanitizeInput(formData.get('subject') as string);
-    const message = sanitizeInput(formData.get('message') as string);
+    const name = sanitizeInput(formData.name);
+    const email = sanitizeInput(formData.email);
+    const subject = sanitizeInput(formData.subject);
+    const message = sanitizeInput(formData.message);
 
     // Validation des données
     const validation = validateInput(name, email, subject, message);
@@ -169,7 +189,13 @@ export function ContactForm({ language, translations: t }: ContactFormProps) {
         duration: 4000,
       });
 
-      form.reset();
+      // Reset du formulaire
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
     } catch (error) {
       toast({
         title: language === 'fr' ? "Erreur" : "Error",
@@ -198,7 +224,9 @@ export function ContactForm({ language, translations: t }: ContactFormProps) {
             required
             maxLength={50}
             pattern="[a-zA-Z\s-]{2,50}"
-            className="mt-2 p-3 w-full border border-muted rounded-md bg-background"
+            value={formData.name}
+            onChange={(e) => handleInputChange('name', e.target.value)}
+            className="mt-2 p-3 w-full border border-muted rounded-md bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
             placeholder={t.form.placeholders.name}
           />
         </div>
@@ -211,7 +239,9 @@ export function ContactForm({ language, translations: t }: ContactFormProps) {
             name="email"
             type="email"
             required
-            className="mt-2 p-3 w-full border border-muted rounded-md bg-background"
+            value={formData.email}
+            onChange={(e) => handleInputChange('email', e.target.value)}
+            className="mt-2 p-3 w-full border border-muted rounded-md bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
             placeholder={t.form.placeholders.email}
           />
         </div>
@@ -221,19 +251,23 @@ export function ContactForm({ language, translations: t }: ContactFormProps) {
         <label htmlFor="subject" className="block text-lg font-medium text-muted-foreground">
           {t.form.subject}
         </label>
-        <input
-          id="subject"
-          name="subject"
-          type="text"
-          required
-          maxLength={MAX_SUBJECT_LENGTH}
-          className="mt-2 p-3 w-full border border-muted rounded-md bg-background"
-          placeholder={t.form.placeholders.subject}
-        />
-        <div className="text-sm text-muted-foreground mt-1">
-          {language === 'fr' 
-            ? `Maximum ${MAX_SUBJECT_LENGTH} caractères`
-            : `Maximum ${MAX_SUBJECT_LENGTH} characters`}
+        <div className="relative">
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            required
+            maxLength={MAX_SUBJECT_LENGTH}
+            value={formData.subject}
+            onChange={(e) => handleInputChange('subject', e.target.value)}
+            className="mt-2 p-3 w-full border border-muted rounded-md bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+            placeholder={t.form.placeholders.subject}
+          />
+          <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+            <span className={`text-xs ${getLengthColorClass(formData.subject.length, MAX_SUBJECT_LENGTH)}`}>
+              {formData.subject.length}/{MAX_SUBJECT_LENGTH}
+            </span>
+          </div>
         </div>
       </div>
 
@@ -241,23 +275,31 @@ export function ContactForm({ language, translations: t }: ContactFormProps) {
         <label htmlFor="message" className="block text-lg font-medium text-muted-foreground">
           {t.form.message}
         </label>
-        <textarea
-          id="message"
-          name="message"
-          required
-          rows={6}
-          maxLength={MAX_MESSAGE_LENGTH}
-          className="mt-2 p-3 w-full border border-muted rounded-md bg-background"
-          placeholder={t.form.placeholders.message}
-        />
-        <div className="text-sm text-muted-foreground mt-1">
-          {language === 'fr' 
-            ? `Maximum ${MAX_MESSAGE_LENGTH} caractères`
-            : `Maximum ${MAX_MESSAGE_LENGTH} characters`}
+        <div className="relative">
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows={6}
+            maxLength={MAX_MESSAGE_LENGTH}
+            value={formData.message}
+            onChange={(e) => handleInputChange('message', e.target.value)}
+            className="mt-2 p-3 w-full border border-muted rounded-md bg-background focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none"
+            placeholder={t.form.placeholders.message}
+          />
+          <div className="absolute bottom-3 right-3">
+            <span className={`text-xs ${getLengthColorClass(formData.message.length, MAX_MESSAGE_LENGTH)}`}>
+              {formData.message.length}/{MAX_MESSAGE_LENGTH}
+            </span>
+          </div>
         </div>
       </div>
 
-      <Button type="submit" className="w-full mt-6" disabled={isSubmitting}>
+      <Button 
+        type="submit" 
+        className="w-full mt-6 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-200" 
+        disabled={isSubmitting}
+      >
         <Send className="mr-2 h-5 w-5" />
         {isSubmitting ? (language === 'fr' ? 'Envoi...' : 'Sending...') : t.form.send}
       </Button>
